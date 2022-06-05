@@ -22,8 +22,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\src\Application\Application.csproj" />
-        <ProjectReference Include="..\..\src\Infrastructure\Infrastructure.csproj" />
+        <ProjectReference Include="..\..\..\src\Web\Application\Flow.WebAPI.Application.csproj" />
+        <ProjectReference Include="..\..\..\src\Web\Infrastructure\Flow.WebAPI.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>
