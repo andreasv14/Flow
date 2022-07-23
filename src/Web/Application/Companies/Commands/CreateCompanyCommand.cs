@@ -1,4 +1,4 @@
-﻿using Flow.WebAPI.Domain.Entities;
+﻿using FluentValidation;
 
 namespace Flow.WebAPI.Application.Companies.Commands
 {
@@ -7,6 +7,14 @@ namespace Flow.WebAPI.Application.Companies.Commands
         public string Name { get; set; }
 
         public string Description { get; set; }
+    }
+
+    public class CreateCompanyCommandValidator : AbstractValidator<CreateCompanyCommand>
+    {
+        public CreateCompanyCommandValidator()
+        {
+            RuleFor(x => x.Name).NotNull().NotEmpty().WithMessage("Name cannot be null or empty");
+        }
     }
 
     public class CreateCompanyCommandHandler : IRequestHandler<CreateCompanyCommand, int>
